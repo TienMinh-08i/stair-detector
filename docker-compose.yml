@@ -1,0 +1,20 @@
+services:
+  stair-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: stair-detector-dev:latest
+    container_name: stair-detector-dev
+    privileged: true
+    network_mode: host
+    environment:
+      - DISPLAY=${DISPLAY:-:0}
+      - ORBBEC_ROOT=/opt/OrbbecSDK
+    volumes:
+      - .:/workspace/opencv_capture
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${ORBBEC_SDK_PATH:?Set ORBBEC_SDK_PATH in .env}:/opt/OrbbecSDK:ro
+      - /dev:/dev
+    working_dir: /workspace/opencv_capture
+    stdin_open: true
+    tty: true

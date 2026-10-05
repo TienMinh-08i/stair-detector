@@ -1,0 +1,36 @@
+# Build outputs
+build/
+build_*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Local runtime/config
+.env
+resource_usage.log
+
+# Captured data can be large; keep only curated examples if needed.
+captures/*
+!captures/.gitkeep
+capture/*
+!capture/.gitkeep
+
+# Release/package artifacts
+*.tar
+*.tar.gz
+*.zip
+*.7z
+stair_detector_*package_*
+stair_detector_runtime_*
+
+# Third-party SDKs should not be committed.
+OrbbecSDK*/
+third_party/OrbbecSDK*/
+
+# Editor/OS noise
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
